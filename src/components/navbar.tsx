@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "./logo";
+import { RiToggleLine } from "react-icons/ri";
+import { RiMenu3Line } from "react-icons/ri";
 
 const Navbar = () => {
   const links = [
@@ -55,11 +57,11 @@ const Navbar = () => {
           Create account
         </Link>
       </div>
-      <div className="block cursor-pointer lg:hidden">
-        <i className="bx bx-toggle-left text-[3rem]"></i>
+      <div className="block cursor-pointer lg:hidden text-4xl">
+        <RiToggleLine />
       </div>
-      <div className="block cursor-pointer lg:hidden">
-        <i className="bx bx-menu text-[3rem]"></i>
+      <div className="block cursor-pointer lg:hidden text-4xl">
+        <RiMenu3Line />
       </div>
     </div>
   );

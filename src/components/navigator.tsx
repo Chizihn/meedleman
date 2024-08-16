@@ -17,10 +17,7 @@ const Navigator: React.FC<NavigatorProps> = ({ to }) => {
   };
 
   return (
-    <span
-      className="bx bx-chevron-left text-[2rem] cursor-pointer"
-      onClick={handleNavigate}
-    >
+    <span className="text-[2rem] cursor-pointer" onClick={handleNavigate}>
       {" "}
       <MdArrowBackIos />
     </span>

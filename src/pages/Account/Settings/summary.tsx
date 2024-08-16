@@ -8,7 +8,7 @@ const AccountSummary = () => {
 
   return (
     <div className="w-full flex justify-center items-center">
-      <div className="h-[95vh] md:h-screen w-[90%] md:w-[80%] lg:w-[60%] xl:w-[80%] mt-8 md:mt-0 py-6 md:py-4 lg:py-10 px-2 flex flex-col justify-start md:justify-start text-black gap-8">
+      <div className="h-[95vh] md:h-screen w-[90%] md:w-[80%] lg:w-[60%] xl:w-[80%] mt-1 py-6 md:py-4 lg:py-10 px-2 flex flex-col justify-start md:justify-start text-black gap-8">
         <div className="flex items-center">
           <Navigator to="" />
           <h3 className="text-3xl font-semibold ml-2">Account Summary</h3>

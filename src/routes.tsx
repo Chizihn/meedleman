@@ -14,7 +14,7 @@ import Welcome from "./pages/Auth/welcome";
 import Dashboard from "./pages/Account/dashboard";
 import Transactions from "./pages/Account/Transactions/transactions";
 import Disputes from "./pages/Account/Dispute/disputes";
-import Blog from "./pages/Account/Blog/blog";
+import Blog from "./pages/Account/Blog/blogs";
 import Support from "./pages/Account/Support/Support";
 import Settings from "./pages/Account/Settings/settings";
 import AccountSummary from "./pages/Account/Settings/summary";
@@ -23,6 +23,15 @@ import BankInformation from "./pages/Account/Settings/bankInformation";
 import Help from "./pages/Account/Settings/help";
 import TermsOfUse from "./pages/Account/Settings/termsOfUse";
 import SuggestAFeature from "./pages/Account/Settings/suggestAFeature";
+import NewTransaction from "./pages/Account/New Transaction/newTransaction";
+import TransactionAgreement from "./pages/Account/New Transaction/transactionAgreement";
+import InviteUser from "./pages/Account/New Transaction/inviteUser";
+import TransactionCreated from "./pages/Account/New Transaction/transactionCreated";
+import ViewTransaction from "./pages/Account/Transactions/ViewTransaction";
+import TransactionInfo from "./pages/Account/Transactions/transactionInfo";
+import Fundtransaction from "./pages/Account/Fund Transaction/Fundtransaction";
+import ViewBlog from "./pages/Account/Blog/ViewBlog";
+import ViewDispute from "./pages/Account/Dispute/viewDispute";
 
 const RoutesComponent = () => {
   return (
@@ -46,8 +55,32 @@ const RoutesComponent = () => {
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Transactions />} />
-          <Route path="disputes" element={<Disputes />} />
-          <Route path="blog" element={<Blog />} />
+
+          <Route path="transactions" element={<Transactions />}>
+            <Route path="new-transaction" element={<NewTransaction />} />
+            <Route
+              path="transaction-agreement"
+              element={<TransactionAgreement />}
+            />
+            <Route path="invite-user" element={<InviteUser />} />
+            <Route
+              path="transaction-created"
+              element={<TransactionCreated />}
+            />
+            <Route path=":id" element={<ViewTransaction />}>
+              <Route path="info" element={<TransactionInfo />} />
+              <Route path="fund-transaction" element={<Fundtransaction />} />
+            </Route>
+          </Route>
+
+          <Route path="disputes" element={<Disputes />}>
+            <Route path=":id" element={<ViewDispute />} />
+          </Route>
+
+          <Route path="blogs" element={<Blog />}>
+            <Route path=":id" element={<ViewBlog />} />
+          </Route>
+
           <Route path="support" element={<Support />} />
 
           <Route path="settings" element={<Settings />}>
