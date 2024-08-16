@@ -16,7 +16,7 @@ const Disputes = () => {
   );
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-[#eee] ">
+    <div className="flex flex-col md:flex-row h-screen bg-slate-100 ">
       <div
         className={
           "h-screen bg-white p-8 relative overflow-y-auto w-full md:w-[80%]"
@@ -28,7 +28,7 @@ const Disputes = () => {
           placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-[#eee] w-full p-3 mt-4 rounded"
+          className="bg-slate-100 w-full p-3 mt-4 rounded"
         />
 
         <div className="mt-6 space-y-4">

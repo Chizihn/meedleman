@@ -48,7 +48,7 @@ const Sidebar = () => {
   const handleIconClick = (index: number) => setActiveIcon(index);
 
   return (
-    <div className="h-[4rem] md:h-screen w-full md:min-w-[5rem] md:w-[5rem] fixed bottom-0 md:relative flex flex-row md:flex-col justify-between items-center bg-[#eee] z-[100] md:py-10 px-4 md:px-6">
+    <div className="h-[4rem] md:h-screen w-full md:min-w-[5rem] md:w-[5rem] fixed bottom-0 md:relative flex flex-row md:flex-col justify-between items-center bg-slate-100 z-[100] md:py-10 px-4 md:px-6 border-r ">
       <div className="flex md:flex-col items-center justify-center w-full md:h-auto space-x-10 md:space-x-0 md:space-y-10">
         {icons.map((icon, index) => (
           <Link

@@ -3,7 +3,7 @@ import Button from "../../../components/button";
 
 const AccountSummary = () => {
   const card =
-    "w-[10rem] bg-[#eee] flex flex-col gap-2 rounded-2xl text-sm flex flex-col justify-center items-center py-6 px-0 lg:px-0";
+    "w-[10rem] bg-slate-100 flex flex-col gap-2 rounded-2xl text-sm flex flex-col justify-center items-center py-6 px-0 lg:px-0";
   const font = "font-semibold text-lg";
 
   return (

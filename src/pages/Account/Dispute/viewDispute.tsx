@@ -11,7 +11,7 @@ const ViewDispute = () => {
   }
 
   return (
-    <div className="w-full h-screen flex justify-center md:justify-start items-center bg-white md:bg-[#eee] relative overflow-y-auto ">
+    <div className="w-full h-screen flex justify-center md:justify-start items-center bg-white md:bg-slate-100 relative overflow-y-auto ">
       <div className="h-screen w-[90%] md:w-full pt-5 md:pt-10 pb-0 px-2 md:px-6 flex flex-col justify-start items-center md:items-start text-black gap-8 ">
         <div className="flex flex-col w-full gap-0 md:gap-4">
           <div className="flex items-center">

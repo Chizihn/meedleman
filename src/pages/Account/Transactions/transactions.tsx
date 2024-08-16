@@ -49,7 +49,7 @@ const TransactionList = () => {
   );
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-[#eee] ">
+    <div className="flex flex-col md:flex-row h-screen bg-slate-100">
       <div
         className={`h-screen bg-white p-8 relative overflow-y-auto ${
           isTransactionsPage ? "w-full md:w-[50%]" : "w-full md:w-[50%]"
@@ -61,7 +61,7 @@ const TransactionList = () => {
           placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-[#eee] w-full p-3 mt-4 rounded"
+          className="bg-slate-100 w-full p-3 mt-4 rounded"
         />
         {transactions.length > 0 && (
           <div className="mt-4 flex gap-2 flex-wrap">
@@ -71,7 +71,7 @@ const TransactionList = () => {
                 className={`px-4 py-1 rounded-full cursor-pointer transition-all duration-300 ease relative ${
                   activeButton === button.id
                     ? "bg-primary text-white"
-                    : "bg-[#eee] hover:bg-primary hover:text-white"
+                    : "bg-slate-100 hover:bg-primary hover:text-white"
                 }`}
                 onClick={() => setActiveButton(button.id)}
               >

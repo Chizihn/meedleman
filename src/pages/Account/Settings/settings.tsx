@@ -28,8 +28,8 @@ const Settings = () => {
   ];
 
   return (
-    <div className="bg-[#eee] flex flex-row h-full">
-      <div className="w-full md:w-[50%] lg:w-40% p-8 bg-gray-100">
+    <div className="bg-white flex flex-row h-full">
+      <div className="w-full md:w-[50%] lg:w-40% p-8 bg-white">
         <h1 className="text-3xl font-bold mb-6">Settings</h1>
 
         <div className="bg-white p-4 rounded-lg mb-6 flex flex-row md:flex-col lg:flex-row items-center space-x-4">
@@ -49,7 +49,7 @@ const Settings = () => {
         <div className="flex flex-col gap-2">
           {profileLinks.map((item, index) => (
             <Link to={item.linkTo} key={index}>
-              <div className="bg-white p-4 rounded-lg hover:bg-gray-200 transition duration-300 ease">
+              <div className="bg-white p-4 rounded-lg hover:bg-slate-100 transition duration-300 ease">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <i className={`${item.iconClass} text-xl`}></i>
