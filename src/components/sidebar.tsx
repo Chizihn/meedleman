@@ -4,7 +4,6 @@ import profileImg from "../assets/images/blank-profile-picture-973460_960_720.we
 import transactions from "../pages/Account/Transactions/data";
 import { AiOutlineTransaction } from "react-icons/ai";
 import { BsTicketDetailed } from "react-icons/bs";
-import { PiChatCircleText } from "react-icons/pi";
 import { TiSupport } from "react-icons/ti";
 
 const Sidebar = () => {
@@ -29,14 +28,6 @@ const Sidebar = () => {
     },
     {
       id: 2,
-      name: "Blog",
-      iconClass: <PiChatCircleText />,
-      notificationCount: 0,
-      component: "blog",
-      to: "blogs",
-    },
-    {
-      id: 3,
       name: "Support",
       iconClass: <TiSupport />,
       notificationCount: 0,
