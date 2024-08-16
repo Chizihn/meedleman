@@ -13,7 +13,7 @@ const TransactionInfo = () => {
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <div className="h-[95vh] md:h-screen w-full md:w-[60%]mt-1 py-0 md:py-8 px-4 flex flex-col justify-start md:justify-start text-black gap-3 bg-white rounded-lg overflow-y-auto">
+      <div className="h-[95vh] md:h-screen w-full md:w-[60%]mt-1 py-0 md:py-8 px-4 flex flex-col justify-start md:justify-start text-black gap-3 bg-white rounded-lg">
         <div className="flex items-center">
           <h3 className="text-3xl font-semibold ml-10">Transactions info</h3>
         </div>
@@ -61,58 +61,60 @@ const TransactionInfo = () => {
         </div>
 
         {/** Contractors */}
-        <div className="mt-1">
-          <h4 className="text-lg font-semibold">2 Parties</h4>
-          <div className="flex flex-col gap-1">
-            <div className="flex items-center bg-gray-100 p-2 rounded-lg">
-              <img
-                src={transaction.profileImg.profileImage}
-                alt="Profile Image"
-                className="w-[50px] h-[50px] rounded-full"
-              />
-              <div className="ml-4">
-                <h5 className="font-semibold">Dulecode</h5>
-                <p className="text-sm text-gray-500">
-                  Member: Since May 5th, 2024
-                </p>
+        <div className="w-[calc(100vh -50%)]  overflow-y-auto">
+          <div className="mt-1">
+            <h4 className="text-lg font-semibold">2 Parties</h4>
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center bg-gray-100 p-2 rounded-lg">
+                <img
+                  src={transaction.profileImg.profileImage}
+                  alt="Profile Image"
+                  className="w-[50px] h-[50px] rounded-full"
+                />
+                <div className="ml-4">
+                  <h5 className="font-semibold">Dulecode</h5>
+                  <p className="text-sm text-gray-500">
+                    Member: Since May 5th, 2024
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center bg-gray-100 p-2 rounded-lg">
-              <img
-                src={transaction.profileImg.profileImage}
-                alt="VictorJohn"
-                className="w-[50px] h-[50px] rounded-full"
-              />
-              <div className="ml-4">
-                <h5 className="font-semibold">VictorJohn</h5>
-                <p className="text-sm text-gray-500">Awaiting confirmation</p>
+              <div className="flex items-center bg-gray-100 p-2 rounded-lg">
+                <img
+                  src={transaction.profileImg.profileImage}
+                  alt="VictorJohn"
+                  className="w-[50px] h-[50px] rounded-full"
+                />
+                <div className="ml-4">
+                  <h5 className="font-semibold">VictorJohn</h5>
+                  <p className="text-sm text-gray-500">Awaiting confirmation</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/** Agreement, Milestone, and Transaction Links */}
-        <div className="mt-1 flex flex-col gap-4">
-          <Link
-            to=""
-            className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
-          >
-            <p className="font-semibold">Agreement</p>
-            <p className="text-sm text-gray-500">Signed (1)</p>
-          </Link>
-          <Link
-            to=""
-            className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
-          >
-            <p className="font-semibold">Milestone</p>
-            <p className="text-sm text-gray-500">2 of 2</p>
-          </Link>
-          <Link
-            to=""
-            className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
-          >
-            <p className="font-semibold">Transactions</p>
-          </Link>
+          {/** Agreement, Milestone, and Transaction Links */}
+          <div className="mt-1 flex flex-col gap-4">
+            <Link
+              to=""
+              className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
+            >
+              <p className="font-semibold">Agreement</p>
+              <p className="text-sm text-gray-500">Signed (1)</p>
+            </Link>
+            <Link
+              to=""
+              className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
+            >
+              <p className="font-semibold">Milestone</p>
+              <p className="text-sm text-gray-500">2 of 2</p>
+            </Link>
+            <Link
+              to=""
+              className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
+            >
+              <p className="font-semibold">Transactions</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

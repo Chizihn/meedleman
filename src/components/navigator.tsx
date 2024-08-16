@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { MdArrowBackIos } from "react-icons/md";
 
 interface NavigatorProps {
-  to: string;
+  to?: string;
 }
 
 const Navigator: React.FC<NavigatorProps> = ({ to }) => {

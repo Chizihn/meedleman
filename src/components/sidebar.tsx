@@ -59,7 +59,7 @@ const Sidebar = () => {
               {icon.iconClass}
             </i>
             {icon.notificationCount > 0 && (
-              <span className="absolute top-[0px] right-[12px] bg-blue-500 text-white text-xs rounded-full px-1">
+              <span className="absolute top-[0px] right-[12px] md:right-[0] bg-blue-500 text-white text-xs rounded-full px-1">
                 {icon.notificationCount}
               </span>
             )}

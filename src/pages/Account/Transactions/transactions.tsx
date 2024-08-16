@@ -6,6 +6,7 @@ import Button from "../../../components/button";
 const TransactionList = () => {
   const [activeButton, setActiveButton] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
+
   const navigate = useNavigate();
   const location = useLocation();
   const isTransactionsPage = location.pathname === "/dashboard/transactions";
@@ -49,9 +50,9 @@ const TransactionList = () => {
   );
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-slate-100">
+    <div className="flex flex-col md:flex-row h-screen bg-slate-100 ">
       <div
-        className={`h-screen bg-white p-8 relative overflow-y-auto ${
+        className={`h-screen bg-white p-8 relative overflow-y-auto border-r ${
           isTransactionsPage ? "w-full md:w-[50%]" : "w-full md:w-[50%]"
         }`}
       >
