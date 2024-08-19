@@ -5,13 +5,31 @@ import { BsTicketDetailed } from "react-icons/bs";
 
 const Disputes = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [activeButton, setActiveButton] = useState(0);
   const navigate = useNavigate();
 
   const viewDispute = (id: number) => {
     navigate(`/dashboard/disputes/${id}`);
   };
 
-  const filtereddisputes = disputes.filter((dispute) =>
+  const buttons = [
+    { id: 0, text: "All" },
+    { id: 1, text: "Resolved" },
+    { id: 2, text: "In progress" },
+  ];
+
+  const getDisputes = () => {
+    switch (activeButton) {
+      case 1:
+        return disputes.filter((dispute) => dispute.status === "Resolved");
+      case 2:
+        return disputes.filter((dispute) => dispute.status === "In-progress");
+      default:
+        return disputes;
+    }
+  };
+
+  const filtereddisputes = getDisputes().filter((dispute) =>
     dispute.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -31,7 +49,25 @@ const Disputes = () => {
           className="bg-slate-100 w-full p-3 mt-4 rounded"
         />
 
-        <div className="mt-6 space-y-4">
+        {disputes.length > 0 && (
+          <div className="mt-4 flex gap-2 flex-wrap">
+            {buttons.map((button) => (
+              <button
+                key={button.id}
+                className={`px-4 py-1 rounded-full cursor-pointer transition-all duration-300 ease relative ${
+                  activeButton === button.id
+                    ? "bg-primary text-white"
+                    : "bg-slate-100 hover:bg-primary hover:text-white"
+                }`}
+                onClick={() => setActiveButton(button.id)}
+              >
+                {button.text}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-4 space-y-4">
           {filtereddisputes.length > 0 ? (
             filtereddisputes.map((dispute) => (
               <div

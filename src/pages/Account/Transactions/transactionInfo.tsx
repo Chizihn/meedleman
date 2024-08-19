@@ -1,15 +1,22 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import transactions from "./data";
 
 const TransactionInfo = () => {
   const { id } = useParams() as { id: string };
   const transaction = transactions.find((t) => t.id === parseInt(id));
-
-  const fund = `/dashboard/transactions/${id}/fund-transaction`;
+  const index = transactions.findIndex((t) => t.id === parseInt(id));
+  const navigate = useNavigate();
 
   if (!transaction) {
     return <p>Transaction not found</p>;
   }
+
+  const deleteTransaction = () => {
+    if (index !== -1) {
+      transactions.splice(index, 1);
+    }
+    navigate("/dashboard/transactions");
+  };
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
@@ -36,15 +43,22 @@ const TransactionInfo = () => {
         {/** Fund, Delete, and Report buttons */}
         <div id="fund-delete-report" className="flex justify-center gap-3 mt-2">
           <Link
-            to={fund}
+            to={`/dashboard/transactions/${id}/fund-transaction`}
             className="bg-gray-200 py-2 px-4 rounded-lg text-center"
           >
             Fund Contract
           </Link>
-          <Link to="" className="bg-gray-200 py-2 px-4 rounded-lg text-center">
+          <Link
+            to="/dashboard/transactions/"
+            className="bg-gray-200 py-2 px-4 rounded-lg text-center"
+            onClick={deleteTransaction}
+          >
             Delete
           </Link>
-          <Link to="" className="bg-gray-200 py-2 px-4 rounded-lg text-center">
+          <Link
+            to="/dashboard/transactions"
+            className="bg-gray-200 py-2 px-4 rounded-lg text-center"
+          >
             Report
           </Link>
         </div>
@@ -85,7 +99,7 @@ const TransactionInfo = () => {
                   className="w-[50px] h-[50px] rounded-full"
                 />
                 <div className="ml-4">
-                  <h5 className="font-semibold">VictorJohn</h5>
+                  <h5 className="font-semibold">Victorjohn</h5>
                   <p className="text-sm text-gray-500">Awaiting confirmation</p>
                 </div>
               </div>
@@ -95,14 +109,14 @@ const TransactionInfo = () => {
           {/** Agreement, Milestone, and Transaction Links */}
           <div className="mt-1 flex flex-col gap-4">
             <Link
-              to=""
+              to={`/dashboard/transactions/${id}/agreement`}
               className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
             >
               <p className="font-semibold">Agreement</p>
               <p className="text-sm text-gray-500">Signed (1)</p>
             </Link>
             <Link
-              to=""
+              to={`/dashboard/transactions/${id}/milestone`}
               className="flex justify-between items-center bg-gray-100 p-3 rounded-lg"
             >
               <p className="font-semibold">Milestone</p>

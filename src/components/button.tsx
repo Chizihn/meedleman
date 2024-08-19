@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ to, text, className }) => {
   return (
     <Link
       className={clsx(
-        "bg-primary text-white text-center p-3 rounded-lg transition 800ms ease mt-4 hover:bg-blue-600",
+        "block w-full bg-primary text-white text-center p-3 rounded-lg transition 800ms ease mt-4 hover:bg-blue-600",
         className
       )}
       to={to}

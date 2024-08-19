@@ -68,8 +68,11 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className="flex justify-center items-center mt-0 md:mt-auto">
-        <Link to="settings" className="flex items-center space-x-2 w-[4rem] ">
+      <div className="flex justify-center  items-center mt-0 md:mt-auto">
+        <Link
+          to="settings"
+          className="flex items-center justify-end md:justify-center space-x-2 w-[4rem] "
+        >
           <img
             src={profileImg}
             className="w-[45px] h-[45px] md:w-[60px] md:h-[60px]  rounded-full border-2 border-gray-300 cursor-pointer"

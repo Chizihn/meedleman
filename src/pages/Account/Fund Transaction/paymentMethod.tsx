@@ -1,10 +1,29 @@
-const PaymentMethod = () => {
+const PaymentMethod = ({
+  onSelect,
+}: {
+  onSelect: (method: string) => void;
+}) => {
   return (
-    <div className="absolute left-0 bottom 0 w-[50%] h-screen flex justify-center items-center">
-      <div className="h-[95vh] md:h-screen w-full md:w-[60%]mt-1 py-0 md:py-8 px-4 flex flex-col justify-start md:justify-start text-black gap-3 bg-white rounded-lg overflow-y-auto">
-        <div className="flex items-center">
-          <h3 className="text-3xl font-semibold ml-10">Choose fund method</h3>
-        </div>
+    <div className="w-full px-4 py-8 bg-white rounded-lg">
+      <h3 className="text-xl font-semibold mb-4">
+        How would you like to fund?
+      </h3>
+      <div className="flex flex-col gap-4">
+        <button
+          className="bg-gray-100 p-4 rounded-lg text-lg font-semibold flex justify-between items-center"
+          onClick={() => onSelect("bankTransfer")}
+        >
+          <span>Bank Transfer</span>
+          <span>Powered by Monipoint</span>
+        </button>
+        <button
+          className="bg-gray-100 p-4 rounded-lg text-lg font-semibold flex justify-between items-center"
+          onClick={() => onSelect("onlinePayment")}
+          disabled
+        >
+          <span>Online Payment</span>
+          <span>Coming Soon!</span>
+        </button>
       </div>
     </div>
   );

@@ -45,15 +45,18 @@ const TransactionList = () => {
     }
   };
 
-  const filteredTransactions = getTransactions().filter((transaction) =>
-    transaction.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredTransactions = getTransactions()
+    .filter((transaction) =>
+      transaction.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .slice()
+    .reverse();
 
   return (
     <div className="flex flex-col md:flex-row h-screen bg-slate-100 ">
       <div
-        className={`h-screen bg-white p-8 relative overflow-y-auto border-r ${
-          isTransactionsPage ? "w-full md:w-[50%]" : "w-full md:w-[50%]"
+        className={`h-screen bg-white p-8 relative border-r ${
+          isTransactionsPage ? "w-full md:w-full" : "w-full md:w-[50%]"
         }`}
       >
         <h2 className="text-3xl font-bold">Transactions</h2>
@@ -87,7 +90,7 @@ const TransactionList = () => {
             filteredTransactions.map((transaction) => (
               <div
                 key={transaction.id}
-                className="flex items-center space-x-3 p-2 rounded-lg cursor-pointer hover:bg-featured"
+                className="flex items-center space-x-3 p-2 rounded-lg cursor-pointer hover:bg-featured overflow-y-auto"
                 onClick={() => viewTransaction(transaction.id)}
               >
                 <img
@@ -95,28 +98,35 @@ const TransactionList = () => {
                   alt="profile"
                   className="w-10 h-10 rounded-full"
                 />
-                <div className="relative w-[80%]">
-                  <h4 className="text-lg">{transaction.title}</h4>
-                  <p className="text-sm">
-                    NGN {transaction.price.toLocaleString()} -{" "}
-                    {transaction.description}
-                  </p>
-                  <span className="ml-auto text-sm absolute top-0 right-0">
-                    {transaction.due}
-                  </span>
+                <div className="relative w-[80%] flex flex-row justify-between">
+                  <div>
+                    <h4 className="text-lg text-wrap">{transaction.title}</h4>
+                    <p className="text-sm">
+                      NGN {transaction.price.toLocaleString()} -{" "}
+                      {transaction.description}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="ml-auto text-sm text-right">
+                      {transaction.due}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))
           ) : (
-            <div>
-              <p className="text-center text-2xl text-black">
+            <div className="flex flex-col gap-4 mt-10">
+              <p className="text-center text-2xl font-semibold">
                 No transation yet.
               </p>
               <p className="text-center text-1xl text-gray-500">
                 You have not started a transaction yet
               </p>
 
-              <Button to="/add-bank-info" text="Start a transaction" />
+              <Button
+                to="/dashboard/transactions/new-transaction/"
+                text="Start a transaction"
+              />
             </div>
           )}
         </div>
@@ -131,7 +141,7 @@ const TransactionList = () => {
         </div>
       </div>
 
-      <div className="bg-white absolute top-[-.5rem] left-[0] md:relative w-full md:relative mt-2 md:mt-0 z-[1000]">
+      <div className="bg-slate absolute top-[-.5rem] left-[0] md:relative w-full md:relative mt-2 md:mt-0 z-[100]">
         <Outlet />
       </div>
     </div>

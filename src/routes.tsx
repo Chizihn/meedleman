@@ -32,6 +32,8 @@ import TransactionInfo from "./pages/Account/Transactions/transactionInfo";
 import Fundtransaction from "./pages/Account/Fund Transaction/Fundtransaction";
 import ViewBlog from "./pages/Account/Blog/ViewBlog";
 import ViewDispute from "./pages/Account/Dispute/viewDispute";
+import Milestone from "./pages/Account/Transactions/milestone";
+import ContractAgreement from "./pages/Account/Transactions/contractAgreement";
 
 const RoutesComponent = () => {
   return (
@@ -70,6 +72,8 @@ const RoutesComponent = () => {
             <Route path=":id" element={<ViewTransaction />}>
               <Route path="info" element={<TransactionInfo />} />
               <Route path="fund-transaction" element={<Fundtransaction />} />
+              <Route path="milestone" element={<Milestone />} />
+              <Route path="agreement" element={<ContractAgreement />} />
             </Route>
           </Route>
 
